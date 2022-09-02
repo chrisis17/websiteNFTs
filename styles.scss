@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+    transition: 0.2s;
+}
+
+.grid_container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.8fr 3fr;
+    grid-template-rows: minmax(80px, 1.3fr) 12fr 1fr;
+    grid-template-areas: 
+        "nav nav"
+        "sidebar main"
+        "footer footer";
+
+    nav{
+        width: 100%;
+        height: 81px;
+        grid-area: nav;
+        background-color: #1f2327;
+        color: rgb(114, 130, 253);
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: "logo pestañas buscar";
+        gap: 0.2rem;
+        align-items: center;
+        font-size: 18px;
+        position: fixed;
+
+        .logo{
+            grid-area: logo;
+            text-align: center;
+            #log{
+                display: block;
+            }
+            #menu{
+                display: none;
+            }
+            
+        }
+        .pestañas{
+            grid-area: pestañas;
+            padding-left: 5%;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+
+            a{
+                text-decoration: none;
+                color: rgb(114, 130, 253);
+            }
+            a:hover{
+                color: rgb(65, 75, 144);
+            }
+        }
+        .buscar{
+            grid-area: buscar;
+        }
+    }
+
+    .sidebar{
+        grid-area: sidebar;
+        background-color: rgb(255, 255, 255);
+        color: rgb(55, 68, 115);
+        padding-top: 10px;
+
+        .component{
+            display: flex;
+            margin: 30px 30px;
+            font-size: 15px;
+
+            .img{
+                margin: 0 10px;
+            }
+            .text:hover{
+                font-size: 19px;
+                color: rgb(1, 1, 36);
+            }
+        }
+    }
+
+    main{
+        grid-area: main;
+        background-color: white;
+
+        .brand{
+            background-color: black;
+            width: 100%;
+            height: 250px;
+            color: white;
+            text-align: center;
+            justify-content: center;padding-top: 90px;
+        }
+
+        .info{
+            padding: 50px;
+
+            .title{
+                display: flex;
+                .img{
+                    width: 20px;
+                    margin: 5px;
+                }
+                h1{
+                    font-size: 50px;
+                }
+            }
+            .text{
+                padding: 30px;
+                max-width: 900px;
+                color: rgb(30, 39, 52);
+
+                p{
+                    margin: 20px 0;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+    footer{
+        grid-area: footer;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(45, 45, 45);
+        color: rgb(163, 163, 163);
+        margin-top:100px;
+        text-align: center;
+        padding-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .grid_container{
+        display: block;
+
+        nav{
+            display: flex;
+            height: 65px;
+            font-size: 14px;
+
+            .pestañas{
+                a{
+                    padding-right: 10px;
+                }
+            }
+            .logo{
+                cursor: pointer;
+                padding-left: 8px;
+                #log{
+                    display: none;
+                }
+                #menu{
+                    display: block;
+                }
+            }
+        }
+        .sidebar{
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  transition: 0.2s;
+}
+
+.grid_container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.8fr 3fr;
+  grid-template-rows: minmax(80px, 1.3fr) 12fr 1fr;
+  grid-template-areas: "nav nav" "sidebar main" "footer footer";
+}
+.grid_container nav {
+  width: 100%;
+  height: 81px;
+  grid-area: nav;
+  background-color: #1f2327;
+  color: rgb(114, 130, 253);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "logo pestañas buscar";
+  gap: 0.2rem;
+  align-items: center;
+  font-size: 18px;
+  position: fixed;
+}
+.grid_container nav .logo {
+  grid-area: logo;
+  text-align: center;
+}
+.grid_container nav .logo #log {
+  display: block;
+}
+.grid_container nav .logo #menu {
+  display: none;
+}
+.grid_container nav .pestañas {
+  grid-area: pestañas;
+  padding-left: 5%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+}
+.grid_container nav .pestañas a {
+  text-decoration: none;
+  color: rgb(114, 130, 253);
+}
+.grid_container nav .pestañas a:hover {
+  color: rgb(65, 75, 144);
+}
+.grid_container nav .buscar {
+  grid-area: buscar;
+}
+.grid_container .sidebar {
+  grid-area: sidebar;
+  background-color: rgb(255, 255, 255);
+  color: rgb(55, 68, 115);
+  padding-top: 10px;
+}
+.grid_container .sidebar .component {
+  display: flex;
+  margin: 30px 30px;
+  font-size: 15px;
+}
+.grid_container .sidebar .component .img {
+  margin: 0 10px;
+}
+.grid_container .sidebar .component .text:hover {
+  font-size: 19px;
+  color: rgb(1, 1, 36);
+}
+.grid_container main {
+  grid-area: main;
+  background-color: white;
+}
+.grid_container main .brand {
+  background-color: black;
+  width: 100%;
+  height: 250px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  padding-top: 90px;
+}
+.grid_container main .info {
+  padding: 50px;
+}
+.grid_container main .info .title {
+  display: flex;
+}
+.grid_container main .info .title .img {
+  width: 20px;
+  margin: 5px;
+}
+.grid_container main .info .title h1 {
+  font-size: 50px;
+}
+.grid_container main .info .text {
+  padding: 30px;
+  max-width: 900px;
+  color: rgb(30, 39, 52);
+}
+.grid_container main .info .text p {
+  margin: 20px 0;
+  font-size: 17px;
+}
+.grid_container footer {
+  grid-area: footer;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(45, 45, 45);
+  color: rgb(163, 163, 163);
+  margin-top: 100px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+@media only screen and (max-width: 700px) {
+  .grid_container {
+    display: block;
+  }
+  .grid_container nav {
+    display: flex;
+    height: 65px;
+    font-size: 14px;
+  }
+  .grid_container nav .pestañas a {
+    padding-right: 10px;
+  }
+  .grid_container nav .logo {
+    cursor: pointer;
+    padding-left: 8px;
+  }
+  .grid_container nav .logo #log {
+    display: none;
+  }
+  .grid_container nav .logo #menu {
+    display: block;
+  }
+  .grid_container .sidebar {
+    display: none;
+  }
+}/*# sourceMappingURL=styles.css.map */
